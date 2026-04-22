@@ -1,13 +1,14 @@
 import { Link, Outlet } from "react-router-dom";
 import hyfLogo from "../../assets/hyf.svg";
 import { useAuth } from "../../context/AuthContext.jsx";
+import EventDetail from "../EventDetail/EventDetail.jsx";
 
 export default function Layout() {
   const { user, logout } = useAuth();
 
   return (
     <div>
-      <header>
+      {/* <header>
         <nav
           style={{
             width: "100%",
@@ -32,27 +33,28 @@ export default function Layout() {
             />
           </a>
           {/* Navigation links go here — e.g. link to event list, cart, login */}
-          <Link to="/events" className="link">
-            Events
-          </Link>
+      {/* <Link to="/events" className="link"> */}
+      {/* Events */}
+      {/* </Link> */}
 
-          {user && (
-            <>
-              <span>{user.email}</span>
-              <button onClick={logout}>Sign out</button>
-            </>
-          )}
+      {/* {user && ( */}
+      {/* <> */}
+      {/* <span>{user.email}</span> */}
+      {/* <button onClick={logout}>Sign out</button> */}
+      {/* </> */}
+      {/* )} */}
 
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
-        </nav>
-      </header>
+      {/* <Link to="/login">Login</Link> */}
+      {/* <Link to="/register">Register</Link> */}
+      {/* </nav> */}
+      {/* </header> */}
 
-      <main>
-        <Outlet />
-      </main>
+      {/* <main> */}
+      {/* <Outlet /> */}
+      {/* </main> */}
 
-      <footer>{/* Footer content goes here */}</footer>
+      {/* <footer>Footer content goes here</footer> */}
+      <EventDetail />
     </div>
   );
 }
