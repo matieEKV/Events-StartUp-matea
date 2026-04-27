@@ -3,6 +3,7 @@
 const events = [
   {
     id: 1,
+    image: "https://frantic.im/assets/react-conf-2018/og-image.jpg",
     name: "React Copenhagen Conference 2026",
     date: "2026-04-15",
     time: "09:00",
@@ -17,6 +18,24 @@ const events = [
   },
   {
     id: 2,
+    image:
+      "https://experiencenve.com/wp-content/uploads/2018/07/Uber-Event-entry.jpg",
+    name: "Tech Night at Uber Aarhus",
+    date: "21-04-2026",
+    time: "17:00",
+    venue: "Uber Aarhus",
+    city: "Aarhus",
+    description:
+      "Join us for an insightful evening of tech talks highlighting the innovative work within Uber’s Engineering Platform team. Engage with Stacy Kerkela, Director of Observability, as she discusses the challenges and opportunities of metrics and observability at a global scale.",
+    price: 35,
+    ticketsAvailable: 3,
+    totalTickets: 45,
+    category: "Conference",
+  },
+  {
+    id: 3,
+    image:
+      "https://www.finconsgroup.com/imgpub/2212810/1900/0/agentic_ai_-_proposta_3.jpg",
     name: "Hackathon: Build with AI",
     date: "2026-04-25",
     time: "09:00",
@@ -30,7 +49,9 @@ const events = [
     category: "Hackathon",
   },
   {
-    id: 3,
+    id: 4,
+    image:
+      "https://fstacademy.com/wp-content/uploads/2022/07/Free-Courses-to-learn-JavaScript.jpg",
     name: "JavaScript: Modern Patterns Workshop",
     date: "2026-05-03",
     time: "10:00",
