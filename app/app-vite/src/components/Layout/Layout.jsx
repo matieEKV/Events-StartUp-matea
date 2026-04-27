@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import hyfLogo from "../../assets/hyf.svg";
 import { useAuth } from "../../context/AuthContext.jsx";
 import EventDetail from "../EventDetail/EventDetail.jsx";
+import EventList from "../EventList/EventList.jsx";
 
 export default function Layout() {
   const { user, logout } = useAuth();
@@ -54,7 +55,7 @@ export default function Layout() {
       {/* </main> */}
 
       {/* <footer>Footer content goes here</footer> */}
-      <EventDetail />
+      <EventList />
     </div>
   );
 }
