@@ -26,9 +26,9 @@
 .eventImage {
   margin-bottom: 1rem;
   max-width: 30rem;
-  max-height: 30rem;
+  max-height: 20rem;
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   object-fit: contain;
 }
 
@@ -36,4 +36,19 @@
 .eventLocation {
   display: flex;
   gap: 1rem;
+}
+
+.toggleButton {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background-color: darkslategrey;
+  color: white;
+}
+
+.toggleButton:hover {
+  background-color: rgb(95, 130, 130);
+}
+
+.toggleButton:active {
+  background-color: rgb(37, 61, 61);
 }
