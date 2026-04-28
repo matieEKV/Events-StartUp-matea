@@ -1,0 +1,38 @@
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.headerContainer {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 5px solid #1c3b5e;
+  max-height: 10rem;
+  background-color: #1c3b5e;
+}
+
+.navbarLogo img {
+  height: 4rem;
+}
+
+.filterTicketsButton {
+  margin: 1rem;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  background-color: #e25c27;
+}
+
+.filterTicketsButton:hover {
+  background-color: #ef845a;
+}
+
+.filterTicketsButton:active {
+  background-color: #b5481d;
+}
