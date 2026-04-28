@@ -1,4 +1,4 @@
-import events from "../../data/events.js";
+import { useState } from "react";
 import { EventCard } from "../EventCard/EventCard.jsx";
 import styles from "./EventList.module.css";
 
@@ -6,7 +6,7 @@ import styles from "./EventList.module.css";
 // TODO: add a "Buy ticket" button to each event card
 // TODO: replace the mock data import with a fetch call to GET /events
 
-export default function EventList() {
+export default function EventList({ events }) {
   return (
     <ul className={styles.cardsContainer}>
       {events.map((event) => (
