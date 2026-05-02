@@ -16,6 +16,7 @@ body {
   border-bottom: 5px solid #1c3b5e;
   max-height: 10rem;
   background-color: #1c3b5e;
+  z-index: 10;
 }
 
 .navbarLogo img {
