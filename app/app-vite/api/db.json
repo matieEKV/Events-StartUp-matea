@@ -3,6 +3,7 @@
   "events": [
     {
       "id": 1,
+      "image": "https://frantic.im/assets/react-conf-2018/og-image.jpg",
       "name": "React Copenhagen Conference 2026",
       "date": "2026-04-15",
       "time": "09:00",
@@ -16,6 +17,7 @@
     },
     {
       "id": 2,
+      "image": "https://www.finconsgroup.com/imgpub/2212810/1900/0/agentic_ai_-_proposta_3.jpg",
       "name": "Hackathon: Build with AI",
       "date": "2026-04-25",
       "time": "09:00",
@@ -29,6 +31,7 @@
     },
     {
       "id": 3,
+      "image": "https://miro.medium.com/v2/resize:fit:1400/1*9rCo29PfDca-damuS8bO7g.png",
       "name": "JavaScript: Modern Patterns Workshop",
       "date": "2026-05-03",
       "time": "10:00",
@@ -42,6 +45,7 @@
     },
     {
       "id": 4,
+      "image": "https://miro.medium.com/0*h09z0Hx6nn86lcwV.jpg",
       "name": "TypeScript Deep Dive",
       "date": "2026-05-10",
       "time": "10:00",
@@ -55,6 +59,7 @@
     },
     {
       "id": 5,
+      "image": "https://copenhagenjs.dk/static/images/cphjs.png",
       "name": "Copenhagen JS Meetup",
       "date": "2026-05-20",
       "time": "18:30",
@@ -68,6 +73,7 @@
     },
     {
       "id": 6,
+      "image": "https://www.amitkk.com/storage/course/full-stack-development-react-node.jpg",
       "name": "Full Stack Bootcamp: React & Node",
       "date": "2026-05-30",
       "time": "09:00",
@@ -81,6 +87,7 @@
     },
     {
       "id": 7,
+      "image": "https://eventible-production.s3.amazonaws.com/event/logos/4372/ossm.jpg",
       "name": "Open Source Summit Nordic",
       "date": "2026-06-05",
       "time": "09:00",
@@ -94,6 +101,7 @@
     },
     {
       "id": 8,
+      "image": "https://img-c.udemycdn.com/course/480x270/6689477_0d13.jpg?w=3840&q=75",
       "name": "Docker & Kubernetes for Developers",
       "date": "2026-06-12",
       "time": "10:00",
@@ -107,6 +115,7 @@
     },
     {
       "id": 9,
+      "image": "https://static.frontendmasters.com/assets/courses/2024-10-22-web-perf-v2/thumb.webp",
       "name": "Web Performance Masterclass",
       "date": "2026-06-20",
       "time": "10:00",
@@ -120,6 +129,7 @@
     },
     {
       "id": 10,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPqg1livFH6RYy-sAGn7ZyPAtRlAni1h9vQ&s",
       "name": "Cybersecurity for Web Developers",
       "date": "2026-06-28",
       "time": "13:00",
