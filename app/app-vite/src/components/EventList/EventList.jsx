@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { EventCard } from "../EventCard/EventCard.jsx";
 import styles from "./EventList.module.css";
-import { useFetchData } from "../FetchQueries/FetchQueries.jsx";
+import { useFetchData } from "../../Hooks/FetchQueries.jsx";
 
 // TODO: split each event below into its own EventCard component
 // TODO: add a "Buy ticket" button to each event card
