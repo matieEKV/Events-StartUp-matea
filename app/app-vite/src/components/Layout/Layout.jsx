@@ -28,31 +28,7 @@ export default function Layout() {
   }
   return (
     <div>
-      {/* <header>
-        <nav
-          style={{
-            width: "100%",
-            display: "flex",
-            gap: "20px",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "10px 20px",
-          }}
-        >
-          <a
-            href="https://www.hackyourfuture.dk/"
-            target="_blank"
-            className="link"
-          >
-            <img
-              src={hyfLogo}
-              alt="HackYourFuture logo"
-              className="logo"
-              width={200}
-              style={{ padding: "20px" }}
-            />
-          </a>
-          {/* Navigation links go here — e.g. link to event list, cart, login */}
+      {/* Navigation links go here — e.g. link to event list, cart, login */}
       {/* <Link to="/events" className="link"> */}
       {/* Events */}
       {/* </Link> */}
@@ -74,8 +50,8 @@ export default function Layout() {
       {/* </main> */}
 
       {/* <footer>Footer content goes here</footer> */}
-      <Navbar onClick={toggleEvents} isOnlyAvailable={isOnlyAvailable} />
-      <EventList events={processedEvents} />
+      <Navbar />
+      <EventList />
       <Footer />
     </div>
   );

@@ -6,7 +6,7 @@ import { EventCard } from "../EventCard/EventCard.jsx";
 
 export default function EventDetail() {
   return (
-    <div>
+    <div className={style.detailContainer}>
       <h2>Aarhus Events</h2>
       <EventCard
         image={event.image}

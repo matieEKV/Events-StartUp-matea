@@ -11,18 +11,15 @@ export const useFetchData = () => {
     setError(null);
     try {
       const targetUrl = api("/events");
-      console.log("Attempting to fetch from:", targetUrl);
       const response = await fetch(api("events"));
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
       setData(data);
-      console.log(data);
     } catch (err) {
       setError(err.message);
       setLoading(false);
-      console.error("Fetch completely failed:", err);
     }
     setLoading(false);
   };
