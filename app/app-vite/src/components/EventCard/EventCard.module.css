@@ -2,6 +2,11 @@
   margin: 0;
 }
 
+.link {
+  text-decoration: none;
+  all: unset;
+}
+
 .eventCard {
   min-height: 35rem;
   margin-top: 2rem;
@@ -15,6 +20,7 @@
   animation: reveal linear both;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
+  cursor: pointer;
 }
 
 @keyframes reveal {

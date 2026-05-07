@@ -10,7 +10,7 @@ import { FilterBar } from "../FilterBar/FilterBar.jsx";
 // TODO: replace the mock data import with a fetch call to GET /events
 
 export default function EventList({ events }) {
-  const { data, loading, error } = useFetchData();
+  const { data, loading, error } = useFetchData("events");
 
   const { isOnlyAvailable, toggleEvents, filteredEvents } =
     useFilterEvents(data);
@@ -22,6 +22,7 @@ export default function EventList({ events }) {
         {filteredEvents.map((event) => (
           <EventCard
             key={event.id}
+            id={event.id}
             image={event.image}
             name={event.name}
             date={event.date}

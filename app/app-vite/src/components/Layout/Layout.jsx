@@ -51,7 +51,7 @@ export default function Layout() {
 
       {/* <footer>Footer content goes here</footer> */}
       <Navbar />
-      <EventList />
+      <Outlet />
       <Footer />
     </div>
   );
