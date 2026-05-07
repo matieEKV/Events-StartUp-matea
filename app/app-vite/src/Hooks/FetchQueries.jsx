@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../api";
 
-export const useFetchData = () => {
+export const useFetchData = (url) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -9,9 +9,9 @@ export const useFetchData = () => {
   const fetchData = async () => {
     setLoading(true);
     setError(null);
+
     try {
-      const targetUrl = api("/events");
-      const response = await fetch(api("events"));
+      const response = await fetch(api(url));
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -25,7 +25,7 @@ export const useFetchData = () => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [url]);
 
   return { data, loading, error };
 };
