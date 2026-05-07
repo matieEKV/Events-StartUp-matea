@@ -1,8 +1,6 @@
 .cardsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
   gap: 2rem;
-  margin-bottom: 5rem;
   padding: 1rem;
 }
