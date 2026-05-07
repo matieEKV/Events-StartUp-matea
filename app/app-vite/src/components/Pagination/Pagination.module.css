@@ -1,0 +1,11 @@
+.pageButtons {
+  margin: 0.5rem;
+}
+
+.pageButtons:hover {
+  background-color: rgb(176, 174, 174);
+}
+
+.pageButtons:active {
+  background-color: rgb(214, 210, 210);
+}

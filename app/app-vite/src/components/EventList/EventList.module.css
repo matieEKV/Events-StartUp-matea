@@ -4,3 +4,8 @@
   gap: 2rem;
   padding: 1rem;
 }
+
+.pageButtonsContainer {
+  margin-top: 1rem;
+  text-align: center;
+}
