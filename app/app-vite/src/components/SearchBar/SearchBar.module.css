@@ -1,0 +1,13 @@
+.searchContainer {
+  width: 20rem;
+  margin-right: 3rem;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem;
+}
+
+.searchBar {
+  width: 80%;
+  all: unset;
+}
