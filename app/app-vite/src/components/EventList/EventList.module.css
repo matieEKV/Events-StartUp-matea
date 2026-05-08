@@ -9,3 +9,8 @@
   margin-top: 1rem;
   text-align: center;
 }
+
+.noResults {
+  text-align: center;
+  line-height: 1.5rem;
+}

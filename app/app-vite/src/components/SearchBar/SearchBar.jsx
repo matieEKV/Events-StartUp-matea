@@ -1,5 +1,5 @@
 import styles from "./SearchBar.module.css";
-export const SearchBar = ({ query, handleSearchChange }) => {
+export const SearchBar = ({ query, onChange }) => {
   return (
     <>
       <div className={styles.searchContainer}>
@@ -8,7 +8,7 @@ export const SearchBar = ({ query, handleSearchChange }) => {
           type="text"
           placeholder="Search events, cities..."
           value={query}
-          onChange={handleSearchChange}
+          onChange={onChange}
         />
         <span>&#128269;</span>
       </div>
