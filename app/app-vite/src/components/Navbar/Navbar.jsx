@@ -2,9 +2,12 @@ import styles from "./Navbar.module.css";
 import { useFilterEvents } from "../../Hooks/FilterEvents.jsx";
 import { SearchBar } from "../SearchBar/SearchBar.jsx";
 import { useSearchParams } from "react-router-dom";
+import LoginIcon from "../LoginIcon/LoginIcon.jsx";
 
 export const Navbar = ({ onClick, isOnlyAvailable }) => {
+  //search bar
   const [searchParams, setSearchParams] = useSearchParams();
+
   let query = searchParams.get("q") || "";
 
   function handleSearchChange(e) {
@@ -18,6 +21,7 @@ export const Navbar = ({ onClick, isOnlyAvailable }) => {
       </div>
       <nav className={styles.navbar}>
         <SearchBar query={query} onChange={handleSearchChange} />
+        <LoginIcon />
       </nav>
     </header>
   );

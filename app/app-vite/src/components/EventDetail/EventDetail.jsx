@@ -16,7 +16,7 @@ export default function EventDetail() {
 
   if (loading) return <p>Loading event details...</p>;
   if (error) return <p>Error: {error}</p>;
-  if (!data) return <p>No event found.</p>;
+  if (!data) return <p>No events found.</p>;
 
   return (
     <div className={styles.detailContainer}>

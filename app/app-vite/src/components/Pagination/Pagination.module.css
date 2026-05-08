@@ -7,5 +7,6 @@
 }
 
 .pageButtons:active {
-  background-color: rgb(214, 210, 210);
+  background-color: #b5481d;
+  border: #cf9078;
 }

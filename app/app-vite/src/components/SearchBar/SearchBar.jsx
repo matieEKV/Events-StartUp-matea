@@ -10,7 +10,7 @@ export const SearchBar = ({ query, onChange }) => {
           value={query}
           onChange={onChange}
         />
-        <span>&#128269;</span>
+        <span className={styles.magnifier}>&#128269;</span>
       </div>
     </>
   );

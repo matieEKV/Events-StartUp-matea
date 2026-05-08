@@ -14,3 +14,15 @@
   text-align: center;
   line-height: 1.5rem;
 }
+
+/* You have a 2D grid of (rows x cols). Each cell (r, c) starts with zero restaurants. You
+want to implement:
+- openRestaurant(r, c) : Creates a new open restaurant at (r,c). If already present, 
+increment the open-restaurant count.
+- countOpenRestaurants(r, c): Returns the count of open restaurants at (r, c). 
+- hasOpenRestaurant(r, c): Returns true if (r, c) has one or more open restaurants, else
+false.
+- countDeliveryZones(): Return the total number of delivery zones. A delivery zone is a
+connected component (4-directionally) of blocks, where each block has at least one open
+restaurant. 
+- return a block*/
