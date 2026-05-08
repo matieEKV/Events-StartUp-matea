@@ -7,5 +7,9 @@ import styles from "./Login.module.css";
 // TODO: redirect to the event list on success
 
 export default function Login() {
-  return <></>;
+  return (
+    <>
+      <h3>Login form is coming soon!</h3>
+    </>
+  );
 }
