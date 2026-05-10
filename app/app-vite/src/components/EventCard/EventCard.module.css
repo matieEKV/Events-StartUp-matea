@@ -3,11 +3,32 @@
 }
 
 .eventCard {
+  min-height: 35rem;
   margin-top: 2rem;
-  max-width: 50rem;
-  display: grid;
-  grid-template-columns: minmax(15rem, 20rem) 1fr;
-  gap: 2rem;
+  max-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+
+  /* cool animation from Limbo-workshop */
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 40px;
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
 }
 
 .infoContainer {
@@ -19,19 +40,34 @@
 .eventInfo {
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
 }
 
 .eventImage {
-  max-width: 20rem;
+  margin-bottom: 1rem;
+  height: 20rem;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .dateTime,
 .eventLocation {
   display: flex;
   gap: 1rem;
+}
+
+.toggleButton {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  background-color: darkslategrey;
+  color: white;
+}
+
+.toggleButton:hover {
+  background-color: rgb(95, 130, 130);
+}
+
+.toggleButton:active {
+  background-color: rgb(37, 61, 61);
 }
