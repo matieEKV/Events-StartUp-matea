@@ -17,10 +17,7 @@ export default function Layout() {
   // const [sortOrder, setSortOrder] = useState("Date Ascending");
 
   const processedEvents = events.filter((event) => {
-    if (isOnlyAvailable) {
-      return event.ticketsAvailable > 0;
-    }
-    return true;
+    return !isOnlyAvailable || event.ticketsAvailable > 0;
   });
 
   function toggleEvents() {
