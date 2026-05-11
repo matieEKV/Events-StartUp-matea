@@ -48,21 +48,7 @@ export default function EventList({ events }) {
       <FilterBar onChange={toggleEvents} />
       <ul className={styles.cardsContainer}>
         {currentEvents.map((event) => (
-          <EventCard
-            key={event.id}
-            id={event.id}
-            image={event.image}
-            name={event.name}
-            date={event.date}
-            time={event.time}
-            venue={event.venue}
-            city={event.city}
-            description={event.description}
-            price={event.price}
-            ticketsAvailable={event.ticketsAvailable}
-            totalTickets={event.totalTickets}
-            category={event.category}
-          ></EventCard>
+          <EventCard key={event.id} event={event}></EventCard>
         ))}
       </ul>
       <div className={styles.pageButtonsContainer}>

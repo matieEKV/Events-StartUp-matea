@@ -2,53 +2,47 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./EventCard.module.css";
 
-export const EventCard = ({
-  id,
-  image,
-  name,
-  date,
-  time,
-  venue,
-  city,
-  description,
-  price,
-  ticketsAvailable,
-  totalTickets,
-  category,
-}) => {
+export const EventCard = ({ event }) => {
   const [isShowing, setIsShowing] = useState(false);
 
   const ticketStatus =
-    ticketsAvailable === 0 ? "Sold out" : `${ticketsAvailable} tickets left`;
+    event.ticketsAvailable === 0
+      ? "Sold out"
+      : `${event.ticketsAvailable} tickets left`;
 
+  const priceStatus = event.price === 0 ? "Free" : `€${event.price}`;
   function toggleSection() {
     setIsShowing(!isShowing);
   }
 
   return (
     <div className={styles.eventCard}>
-      <Link to={`/events/${id}`} className={styles.link}>
-        <img className={styles.eventImage} src={image} alt="conference event" />
+      <Link to={`/events/${event.id}`} className={styles.link}>
+        <img
+          className={styles.eventImage}
+          src={event.image}
+          alt="conference event"
+        />
         <section className={styles.infoContainer}>
           <section className={styles.eventInfo}>
             <p className={styles.label}>
               <strong>Title</strong>
             </p>
-            <p className={styles.eventTitle}>{name}</p>
+            <p className={styles.eventTitle}>{event.name}</p>
             <p className={styles.label}>
               <strong>Date | Time</strong>
             </p>
             <div className={styles.dateTime}>
-              <span>{date}</span>
-              <span>{time}</span>
+              <span>{event.date}</span>
+              <span>{event.time}</span>
             </div>
 
             <p className={styles.label}>
               <strong>Location</strong>
             </p>
             <div className={styles.eventLocation}>
-              <span>{venue}</span>
-              <span>{city}</span>
+              <span>{event.venue}</span>
+              <span>{event.city}</span>
             </div>
             {isShowing && (
               <>
@@ -59,9 +53,7 @@ export const EventCard = ({
                 <p className={styles.label}>
                   <strong>Price</strong>
                 </p>
-                <p className={styles.price}>
-                  {price === 0 ? "Free" : `€${price}`}
-                </p>
+                <p className={styles.price}>{priceStatus}</p>
                 <p className={styles.label}>
                   <strong>Tickets Available</strong>
                 </p>
@@ -69,11 +61,11 @@ export const EventCard = ({
                 <p className={styles.label}>
                   <strong>Total Tickets</strong>
                 </p>
-                <p className={styles.tickets}>{totalTickets}</p>
+                <p className={styles.tickets}>{event.totalTickets}</p>
                 <p className={styles.label}>
                   <strong>Category</strong>
                 </p>
-                <p className={styles.category}>{category}</p>
+                <p className={styles.category}>{event.category}</p>
               </>
             )}
           </section>
