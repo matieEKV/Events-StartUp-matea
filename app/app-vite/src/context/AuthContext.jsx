@@ -14,7 +14,7 @@ export function AuthProvider({ children }) {
   });
 
   async function login(email, password) {
-    const response = await fetch(api("/login"), {
+    const response = await fetch(api("login"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -29,6 +29,19 @@ export function AuthProvider({ children }) {
   }
 
   async function register(email, password) {
+    const response = await fetch(api("register"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        "Could not register at the moment. Please try again later.",
+      );
+    }
+    const { accessToken, user } = await response.json();
+    persist(accessToken, user);
     // TODO: POST to api("/register") with { email, password }
     // TODO: if the response is not ok, throw an error
     // TODO: destructure { accessToken, user } from the response JSON
@@ -38,6 +51,8 @@ export function AuthProvider({ children }) {
   function logout() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
+    setToken(null);
+    setUser(null);
     // TODO add the missing logout logic here — clear the token and user from state as well
   }
 

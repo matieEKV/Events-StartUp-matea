@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./LoginIcon.module.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext.jsx";
 
 // TODO: build a login form with relevant fields
 // TODO: call login(email, password) from useAuth() on submit
@@ -9,10 +10,13 @@ import { Link } from "react-router-dom";
 
 export default function LoginIcon() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, token, logout } = useAuth();
+  const isAuthenticated = !!user && !!token;
 
   function handleOnClick() {
     setIsOpen(!isOpen);
   }
+
   return (
     <>
       <button className={styles.loginIcon} onClick={handleOnClick}>
@@ -30,16 +34,23 @@ export default function LoginIcon() {
           <circle cx="12" cy="7" r="4"></circle>
         </svg>
       </button>
-      {isOpen && (
-        <div className={styles.loginMenu}>
-          <Link to="/login" className={styles.linkOptions}>
-            Login
-          </Link>
-          <Link to="/register" className={styles.linkOptions}>
-            Register
-          </Link>
-        </div>
-      )}
+      {isOpen &&
+        (!isAuthenticated ? (
+          <div className={styles.loginMenu}>
+            <Link to="/login" className={styles.linkOptions}>
+              Login
+            </Link>
+            <Link to="/register" className={styles.linkOptions}>
+              Register
+            </Link>
+          </div>
+        ) : (
+          <div className={styles.loginMenu}>
+            <button className={styles.linkOptions} onClick={logout}>
+              Logout
+            </button>
+          </div>
+        ))}
     </>
   );
 }
