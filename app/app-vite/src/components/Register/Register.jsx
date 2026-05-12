@@ -27,7 +27,7 @@ export default function Register() {
     if (isAuthenticated) {
       const timer = setTimeout(() => {
         navigate("/events");
-      }, 2000);
+      }, 1500);
       return () => clearTimeout(timer);
     }
   }, [isAuthenticated, navigate]);
@@ -36,10 +36,10 @@ export default function Register() {
     e.preventDefault();
     try {
       await register(email, password);
-      navigate("/events");
     } catch (error) {
       setErrorMessage(
         "Could not register at the moment. Please try again later: ",
+        error,
       );
     }
   };
