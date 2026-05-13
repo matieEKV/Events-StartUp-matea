@@ -1,0 +1,36 @@
+.cartIcon {
+  background-color: transparent;
+  margin-right: 3rem;
+  border: none;
+}
+
+.cartIcon:active {
+  color: #b5481d;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #1c3b5e;
+  max-height: 10rem;
+  padding: 0.5rem 2rem;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .loginIcon {
+    height: 4rem;
+    width: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginIcon {
+    height: 3rem;
+    width: 1rem;
+  }
+}
