@@ -13,6 +13,7 @@ export const CardContextProvider = ({ children }) => {
 
   console.log("totalTickets:", totalTickets);
   const addTicketToOrder = (
+    ticketImage,
     ticketTitle,
     ticketDate,
     ticketTime,
@@ -20,19 +21,38 @@ export const CardContextProvider = ({ children }) => {
     numberOfTickets,
     totalPrice,
   ) => {
-    setTickets([
-      ...tickets,
-      {
-        ticketTitle,
-        ticketDate,
-        ticketTime,
-        ticketPrice,
-        numberOfTickets,
-        totalPrice,
-      },
-    ]);
-    persist(tickets);
+    const newTicket = {
+      ticketImage,
+      ticketTitle,
+      ticketDate,
+      ticketTime,
+      ticketPrice,
+      numberOfTickets,
+      totalPrice,
+    };
+
+    //check if the ticket already exists in the state, if yes update it without creating a new ticket
+    //inspiration taken from https://stackoverflow.com/questions/66941071/update-quantity-of-duplicate-product-in-cart-reactjs
+    const copiedCart = [...tickets];
+    const foundIndex = copiedCart.findIndex(
+      (item) => item.ticketTitle === newTicket.ticketTitle,
+    );
+    if (foundIndex === -1) {
+      setTickets([...tickets, newTicket]);
+    } else {
+      const copiedTicket = copiedCart[foundIndex];
+      copiedCart[foundIndex] = {
+        ...copiedTicket,
+        numberOfTickets:
+          copiedTicket.numberOfTickets + newTicket.numberOfTickets,
+        totalPrice: copiedTicket.totalPrice + newTicket.totalPrice,
+      };
+      setTickets(copiedCart);
+    }
+    //save in localStorage
+    persist(copiedCart);
   };
+
   const removeTicketFromOrder = (ticketId) => {
     setTickets(tickets.filter((ticket) => ticket.id !== ticketId));
   };
