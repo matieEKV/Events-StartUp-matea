@@ -71,18 +71,12 @@
 
 .tickets {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 2rem;
 }
 
 .counter {
-  /* 
-  height: 3rem;
-  width: 10rem;
-  border: 1px solid rgb(154, 154, 230);
-  padding: 0.5rem;
-  border-radius: 2rem;
-  align-items: center;
-   */
   box-shadow: rgba(18, 18, 18, 0.15) 0px 1px 4px 0px;
 
   flex-shrink: 0;
@@ -93,7 +87,10 @@
   padding: calc(4px);
   border: 1px solid rgb(191, 191, 191);
   border-radius: 32px;
-  width: 9rem;
+  /* another cool thing learned from Limbo workshop */
+  height: clamp(2.5rem, 3.5vw, 3.5rem);
+  width: clamp(8rem, 15vw, 12rem);
+  flex-shrink: 1;
 }
 
 .minusButton,
@@ -131,9 +128,11 @@
   box-shadow: rgba(18, 18, 18, 0.15) 0px 1px 4px 0px;
   color: white;
   font-size: 1rem;
-  width: 15rem;
   cursor: pointer;
+  height: clamp(2.5rem, 3.5vw, 3.5rem);
+  width: clamp(10rem, 20vw, 15rem);
 }
+
 .buyTickets:active {
   background-color: #5184bf;
 }
@@ -141,6 +140,7 @@
 .count {
   font-size: 1.3rem;
 }
+
 @media (max-width: 768px) {
   html {
     font-size: 13px;

@@ -78,7 +78,7 @@ export default function EventDetail() {
             <span className={styles.descInfo}>
               {data.ticketsAvailable === 0
                 ? "SOLD OUT"
-                : `${data.ticketsAvailable} tickets left`}
+                : `${data.ticketsAvailable}`}
             </span>
           </p>
           <div className={styles.counter}>
