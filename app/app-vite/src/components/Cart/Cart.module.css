@@ -2,6 +2,7 @@
   background-color: transparent;
   margin-right: 3rem;
   border: none;
+  position: relative;
 }
 
 .cartIcon:active {
@@ -13,14 +14,75 @@
   flex-direction: column;
   gap: 0.5rem;
   background-color: #1c3b5e;
-  max-height: 10rem;
+  box-shadow: rgba(18, 18, 18, 0.35) 0px 1px 4px 0px;
+  max-height: fit-content;
   padding: 0.5rem 2rem;
   position: absolute;
   right: 0;
   top: 100%;
+  border-radius: 2px;
   color: white;
 }
 
+.title {
+  font-size: larger;
+}
+
+.infoP {
+  display: flex;
+  gap: 2rem;
+}
+
+.ticketInfo {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  padding-bottom: 1rem;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.bubble {
+  background-color: #b5481d;
+  /* rgb(0, 157, 255); */
+  color: white;
+  padding: 0.3rem;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 2px;
+  right: 40px;
+  z-index: 2;
+}
+
+.emptyCart {
+  color: rgb(227, 225, 225);
+}
+
+.checkout {
+  background-color: #b5481d;
+  color: white;
+  border: none;
+  box-shadow: rgba(18, 18, 18, 0.35) 0px 1px 4px 0px;
+  border-radius: 20px;
+  padding: 0.4rem;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.checkout:active {
+  background-color: #a03308;
+}
 @media (max-width: 768px) {
   .loginIcon {
     height: 4rem;
