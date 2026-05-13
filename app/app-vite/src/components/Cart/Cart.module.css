@@ -3,6 +3,8 @@
   margin-right: 3rem;
   border: none;
   position: relative;
+  color: white;
+  z-index: 1;
 }
 
 .cartIcon:active {
@@ -48,7 +50,6 @@
 
 .bubble {
   background-color: #b5481d;
-  /* rgb(0, 157, 255); */
   color: white;
   padding: 0.3rem;
   border-radius: 50%;
@@ -62,6 +63,7 @@
   top: 2px;
   right: 40px;
   z-index: 2;
+  pointer-events: none;
 }
 
 .emptyCart {

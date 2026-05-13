@@ -1,5 +1,4 @@
 .loginIcon {
-  /* margin-right: 3rem; */
   color: white;
   background-color: transparent;
   border: none;
@@ -17,7 +16,7 @@
   max-height: 10rem;
   padding: 0.5rem 2rem;
   position: absolute;
-  right: 0;
+  right: 95px;
   top: 100%;
 }
 

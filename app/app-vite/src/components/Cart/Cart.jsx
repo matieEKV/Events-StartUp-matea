@@ -17,28 +17,24 @@ export const Cart = () => {
   }
   return (
     <>
-      <div className={styles.iconContainer}>
-        {totalTickets > 0 && (
-          <div className={styles.bubble}>{totalTickets}</div>
-        )}
-        <button className={styles.cartIcon} onClick={handleOnClick}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="50"
-            height="50"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M 2 6 h 4 l 3 9 h 8 l 3 -9 h -14" />
-            <circle cx="9" cy="18" r="1.5" />
-            <circle cx="17" cy="18" r="1.5" />
-          </svg>
-        </button>
-      </div>
+      {totalTickets > 0 && <div className={styles.bubble}>{totalTickets}</div>}
+      <button className={styles.cartIcon} onClick={handleOnClick}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="50"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M 2 6 h 4 l 3 9 h 8 l 3 -9 h -14" />
+          <circle cx="9" cy="18" r="1.5" />
+          <circle cx="17" cy="18" r="1.5" />
+        </svg>
+      </button>
       {isOpen &&
         (totalTickets > 0 ? (
           <div className={styles.dropdown}>
