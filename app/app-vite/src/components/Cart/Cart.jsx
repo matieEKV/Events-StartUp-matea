@@ -1,20 +1,24 @@
 import styles from "./Cart.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { useCardContext } from "../../context/CardContext.jsx";
-
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 export const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { token, isAuthenticated } = useAuth();
   const { tickets, totalTickets, totalPrice } = useCardContext();
 
-  console.log(tickets.numberOfTickets);
-
-  console.log(tickets.length);
-
   function handleOnClick() {
     setIsOpen(!isOpen);
   }
+  //close dropdown when a page is changed
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
   return (
     <>
       {totalTickets > 0 && <div className={styles.bubble}>{totalTickets}</div>}
@@ -64,7 +68,11 @@ export const Cart = () => {
               <span>Total: </span>
               <span>DKK {totalPrice}</span>
             </p>
-            <button className={styles.checkout}>Checkout</button>
+            <button className={styles.checkout}>
+              <Link className={styles.link} to={`checkout`}>
+                Checkout
+              </Link>
+            </button>
           </div>
         ) : (
           <div className={styles.dropdown}>
