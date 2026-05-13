@@ -39,6 +39,7 @@ export default function EventDetail() {
       ticketNumber,
       data.price * ticketNumber,
     );
+    setTicketNumber(0);
   }
   return (
     <div className={styles.detailContainer}>
