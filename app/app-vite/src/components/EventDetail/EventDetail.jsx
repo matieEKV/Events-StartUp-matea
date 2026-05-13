@@ -7,12 +7,11 @@ import { Link, useParams } from "react-router-dom";
 import { useFetchData } from "../../Hooks/FetchQueries.jsx";
 import styles from "./EventDetail.module.css";
 import { useState } from "react";
+import { useCardContext } from "../../context/CardContext.jsx";
 
 export default function EventDetail() {
   const { id } = useParams();
-
-  // const [event, setEvent] = useState(null);
-
+  const { addTicketToOrder } = useCardContext();
   const { data, loading, error } = useFetchData(`events/${id}`);
   const [ticketNumber, setTicketNumber] = useState(0);
 
@@ -31,7 +30,16 @@ export default function EventDetail() {
     }
   }
 
-  function handleBuyTickets() {}
+  function handleBuyTickets() {
+    addTicketToOrder(
+      data.name,
+      data.date,
+      data.time,
+      data.price,
+      ticketNumber,
+      data.price * ticketNumber,
+    );
+  }
   return (
     <div className={styles.detailContainer}>
       <div className={styles.imageBlock}>
@@ -50,7 +58,7 @@ export default function EventDetail() {
           </div>
         </div>
         <img
-          classNam={styles.eventImage}
+          // className={styles.eventImage}
           src={data.image}
           alt={data.name}
         ></img>
