@@ -1,8 +1,55 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "m@name.com",
+      "password": "$2a$10$FqnJJh66Z0b3YECTfkAu9OEUM3yCSk2eucU5yHPNERXFxXvFSWCgS",
+      "id": 1
+    },
+    {
+      "email": "m@mail.com",
+      "password": "$2a$10$IOXtjGBIqVp9ZBSKOBM3KO1qCUfwMfZFKMNVTV3aWdq1bFMeSZQWi",
+      "id": 2
+    },
+    {
+      "email": "m@home.com",
+      "password": "$2a$10$UEYGmKLM/Bus0JccuhrgT.i2fOlxgWeTNkOfxJuUSCt3i3XwlwlXy",
+      "id": 3
+    },
+    {
+      "email": "h@kjdn.com",
+      "password": "$2a$10$3S88pML7qtlQO1Hpb9Ez9uzzzm.iJ2tCsMnMQwHJwvO2zWb/Fstgy",
+      "id": 4
+    },
+    {
+      "email": "kjfn@kjnf.com",
+      "password": "$2a$10$WPL/L5zisHKqYZmTFeLiOufYvzYqMVO0FOGR5N3LDZvAa8PNw1QW2",
+      "id": 5
+    },
+    {
+      "email": "dkfnd@kfjnd.com",
+      "password": "$2a$10$iaaBe/ha5IIJ/siBWv7ZI.KNacKvDw9bNfpUjtZqfJI9J4dOxYrlG",
+      "id": 6
+    },
+    {
+      "email": "kjfn@kfdjnf.com",
+      "password": "$2a$10$M17ZZw6EhoWsmx8gihN9fuh9NuFZFofI3OfzmGAqxf5ToCd2j/Qwy",
+      "id": 7
+    },
+    {
+      "email": "hello@name.com",
+      "password": "$2a$10$OdE1gi.iw8DJaskucatl9u5HaHYnoBYKeludqTTcw5zih46/b9wDO",
+      "id": 8
+    },
+    {
+      "email": "my@email.com",
+      "password": "$2a$10$ZZ98eJp2ImAHXx5MpERbMuLjMBGYyR0JIlZOt1bme4.nRmFtnbJpq",
+      "id": 9
+    }
+  ],
   "events": [
     {
       "id": 1,
+      "image": "https://frantic.im/assets/react-conf-2018/og-image.jpg",
       "name": "React Copenhagen Conference 2026",
       "date": "2026-04-15",
       "time": "09:00",
@@ -16,6 +63,7 @@
     },
     {
       "id": 2,
+      "image": "https://www.finconsgroup.com/imgpub/2212810/1900/0/agentic_ai_-_proposta_3.jpg",
       "name": "Hackathon: Build with AI",
       "date": "2026-04-25",
       "time": "09:00",
@@ -29,6 +77,7 @@
     },
     {
       "id": 3,
+      "image": "https://miro.medium.com/v2/resize:fit:1400/1*9rCo29PfDca-damuS8bO7g.png",
       "name": "JavaScript: Modern Patterns Workshop",
       "date": "2026-05-03",
       "time": "10:00",
@@ -42,6 +91,7 @@
     },
     {
       "id": 4,
+      "image": "https://miro.medium.com/0*h09z0Hx6nn86lcwV.jpg",
       "name": "TypeScript Deep Dive",
       "date": "2026-05-10",
       "time": "10:00",
@@ -55,6 +105,7 @@
     },
     {
       "id": 5,
+      "image": "https://copenhagenjs.dk/static/images/cphjs.png",
       "name": "Copenhagen JS Meetup",
       "date": "2026-05-20",
       "time": "18:30",
@@ -68,6 +119,7 @@
     },
     {
       "id": 6,
+      "image": "https://www.amitkk.com/storage/course/full-stack-development-react-node.jpg",
       "name": "Full Stack Bootcamp: React & Node",
       "date": "2026-05-30",
       "time": "09:00",
@@ -81,6 +133,7 @@
     },
     {
       "id": 7,
+      "image": "https://eventible-production.s3.amazonaws.com/event/logos/4372/ossm.jpg",
       "name": "Open Source Summit Nordic",
       "date": "2026-06-05",
       "time": "09:00",
@@ -94,6 +147,7 @@
     },
     {
       "id": 8,
+      "image": "https://img-c.udemycdn.com/course/480x270/6689477_0d13.jpg?w=3840&q=75",
       "name": "Docker & Kubernetes for Developers",
       "date": "2026-06-12",
       "time": "10:00",
@@ -107,6 +161,7 @@
     },
     {
       "id": 9,
+      "image": "https://static.frontendmasters.com/assets/courses/2024-10-22-web-perf-v2/thumb.webp",
       "name": "Web Performance Masterclass",
       "date": "2026-06-20",
       "time": "10:00",
@@ -120,6 +175,7 @@
     },
     {
       "id": 10,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPqg1livFH6RYy-sAGn7ZyPAtRlAni1h9vQ&s",
       "name": "Cybersecurity for Web Developers",
       "date": "2026-06-28",
       "time": "13:00",

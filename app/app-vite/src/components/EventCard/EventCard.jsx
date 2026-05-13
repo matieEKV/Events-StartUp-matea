@@ -1,65 +1,76 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./EventCard.module.css";
 
-export const EventCard = ({
-  image,
-  name,
-  date,
-  time,
-  venue,
-  city,
-  description,
-  price,
-  ticketsAvailable,
-  totalTickets,
-  category,
-}) => {
+export const EventCard = ({ event }) => {
   const [isShowing, setIsShowing] = useState(false);
 
+  const ticketStatus =
+    event.ticketsAvailable === 0
+      ? "Sold out"
+      : `${event.ticketsAvailable} tickets left`;
+
+  const priceStatus = event.price === 0 ? "Free" : `€${event.price}`;
   function toggleSection() {
     setIsShowing(!isShowing);
-    console.log("I was in the function");
   }
+
   return (
     <div className={styles.eventCard}>
-      <img className={styles.eventImage} src={image} alt="conference event" />
-      <section className={styles.infoContainer}>
-        <section className={styles.eventInfo}>
-          <h5 className={styles.label}>Title</h5>
-          <h4 className={styles.eventTitle}>{name}</h4>
-          <h5 className={styles.label}>Date and Time</h5>
-          <div className={styles.dateTime}>
-            <span>{date}</span>
-            <span>{time}</span>
-          </div>
+      <Link to={`/events/${event.id}`} className={styles.link}>
+        <img
+          className={styles.eventImage}
+          src={event.image}
+          alt="conference event"
+        />
+        <section className={styles.infoContainer}>
+          <section className={styles.eventInfo}>
+            <p className={styles.label}>
+              <strong>Title</strong>
+            </p>
+            <p className={styles.eventTitle}>{event.name}</p>
+            <p className={styles.label}>
+              <strong>Date | Time</strong>
+            </p>
+            <div className={styles.dateTime}>
+              <span>{event.date}</span>
+              <span>{event.time}</span>
+            </div>
 
-          <h5 className={styles.label}>Location</h5>
-          <div className={styles.eventLocation}>
-            <span>{venue}</span>
-            <span>{city}</span>
-          </div>
-          {isShowing && (
-            <>
-              <h5 className={styles.label}>Description</h5>
-              <p className={styles.eventDescription}>{description}</p>
-              <h5 className={styles.label}>Price</h5>
-              <p className={styles.price}>
-                {price === 0 ? "Free" : `€${price}`}
-              </p>
-              <h5 className={styles.label}>Tickets Available</h5>
-              <p className={styles.tickets}>
-                {ticketsAvailable === 0
-                  ? "Sold out"
-                  : `${ticketsAvailable} tickets left`}
-              </p>
-              <h5 className={styles.label}>Total Tickets</h5>
-              <p className={styles.tickets}>{totalTickets}</p>
-              <h5 className={styles.label}>Category</h5>
-              <p className={styles.category}>{category}</p>
-            </>
-          )}
+            <p className={styles.label}>
+              <strong>Location</strong>
+            </p>
+            <div className={styles.eventLocation}>
+              <span>{event.venue}</span>
+              <span>{event.city}</span>
+            </div>
+            {isShowing && (
+              <>
+                <p className={styles.label}>
+                  <strong>Description</strong>
+                </p>
+                <p className={styles.eventDescription}>{description}</p>
+                <p className={styles.label}>
+                  <strong>Price</strong>
+                </p>
+                <p className={styles.price}>{priceStatus}</p>
+                <p className={styles.label}>
+                  <strong>Tickets Available</strong>
+                </p>
+                <p className={styles.tickets}>{ticketStatus}</p>
+                <p className={styles.label}>
+                  <strong>Total Tickets</strong>
+                </p>
+                <p className={styles.tickets}>{event.totalTickets}</p>
+                <p className={styles.label}>
+                  <strong>Category</strong>
+                </p>
+                <p className={styles.category}>{event.category}</p>
+              </>
+            )}
+          </section>
         </section>
-      </section>
+      </Link>
       <button className={styles.toggleButton} onClick={toggleSection}>
         {isShowing ? "Show less" : "Show more"}
       </button>

@@ -1,0 +1,36 @@
+.loginIcon {
+  margin-right: 3rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+
+.loginIcon:active {
+  color: #b5481d;
+}
+
+.loginMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #1c3b5e;
+  max-height: 10rem;
+  padding: 0.5rem 2rem;
+  position: absolute;
+  right: 0;
+  top: 100%;
+}
+
+.linkOptions {
+  all: unset;
+  color: white;
+  cursor: pointer;
+}
+
+.linkOptions:hover {
+  color: #b66c4f;
+}
+
+.linkOptions:active {
+  color: #b5481d;
+}

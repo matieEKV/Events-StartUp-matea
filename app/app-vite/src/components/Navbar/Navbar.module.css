@@ -23,17 +23,6 @@ body {
   height: 4rem;
 }
 
-.filterTicketsButton {
-  margin: 1rem;
-  padding: 0.4rem;
-  border-radius: 1rem;
-  background-color: #e25c27;
-}
-
-.filterTicketsButton:hover {
-  background-color: #ef845a;
-}
-
-.filterTicketsButton:active {
-  background-color: #b5481d;
+.navbar {
+  display: flex;
 }
