@@ -1,5 +1,5 @@
 .loginIcon {
-  margin-right: 3rem;
+  /* margin-right: 3rem; */
   color: white;
   background-color: transparent;
   border: none;
@@ -33,4 +33,18 @@
 
 .linkOptions:active {
   color: #b5481d;
+}
+
+@media (max-width: 768px) {
+  .loginIcon {
+    height: 4rem;
+    width: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginIcon {
+    height: 3rem;
+    width: 1rem;
+  }
 }

@@ -10,8 +10,7 @@ import { useAuth } from "../../context/AuthContext.jsx";
 
 export default function LoginIcon() {
   const [isOpen, setIsOpen] = useState(false);
-  const { user, token, logout } = useAuth();
-  const isAuthenticated = !!user && !!token;
+  const { user, token, logout, isAuthenticated } = useAuth();
 
   function handleOnClick() {
     setIsOpen(!isOpen);
@@ -34,6 +33,7 @@ export default function LoginIcon() {
           <circle cx="12" cy="7" r="4"></circle>
         </svg>
       </button>
+
       {isOpen &&
         (!isAuthenticated ? (
           <div className={styles.loginMenu}>
