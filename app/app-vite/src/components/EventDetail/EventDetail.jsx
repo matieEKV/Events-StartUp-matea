@@ -6,6 +6,7 @@ import { EventCard } from "../EventCard/EventCard.jsx";
 import { Link, useParams } from "react-router-dom";
 import { useFetchData } from "../../Hooks/FetchQueries.jsx";
 import styles from "./EventDetail.module.css";
+import { useState } from "react";
 
 export default function EventDetail() {
   const { id } = useParams();
@@ -13,11 +14,24 @@ export default function EventDetail() {
   // const [event, setEvent] = useState(null);
 
   const { data, loading, error } = useFetchData(`events/${id}`);
+  const [ticketNumber, setTicketNumber] = useState(0);
 
   if (loading) return <p>Loading event details...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!data) return <p>No events found.</p>;
 
+  function handleIncrement() {
+    if (ticketNumber < data.ticketsAvailable) {
+      setTicketNumber((prev) => prev + 1);
+    }
+  }
+  function handleDecrement() {
+    if (ticketNumber > 0) {
+      setTicketNumber((prev) => prev - 1);
+    }
+  }
+
+  function handleBuyTickets() {}
   return (
     <div className={styles.detailContainer}>
       <div className={styles.imageBlock}>
@@ -55,17 +69,52 @@ export default function EventDetail() {
         <p>
           <span className={styles.legend}>PRICE</span>
           <span className={styles.descInfo}>
-            {data.price === 0 ? "FREE" : data.price}
+            {data.price === 0 ? "FREE" : data.price} DKK
           </span>
         </p>
-        <p>
-          <span className={styles.legend}>AVAILABLE TICKETS</span>
-          <span className={styles.descInfo}>
-            {data.ticketsAvailable === 0
-              ? "SOLD OUT"
-              : `${data.ticketsAvailable} tickets left`}
-          </span>
-        </p>
+        <div className={styles.tickets}>
+          <p>
+            <span className={styles.legend}>AVAILABLE TICKETS</span>
+            <span className={styles.descInfo}>
+              {data.ticketsAvailable === 0
+                ? "SOLD OUT"
+                : `${data.ticketsAvailable} tickets left`}
+            </span>
+          </p>
+          <div className={styles.counter}>
+            <button className={styles.minusButton} onClick={handleDecrement}>
+              <svg
+                viewBox="0 0 24 24"
+                width="95%"
+                height="95%"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+            <p className={styles.count}>{ticketNumber}</p>
+            <button className={styles.plusButton} onClick={handleIncrement}>
+              <svg
+                viewBox="0 0 24 24"
+                width="95%"
+                height="95%"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+              >
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+          <button className={styles.buyTickets} onClick={handleBuyTickets}>
+            Buy Tickets
+          </button>
+        </div>
       </div>
     </div>
   );
