@@ -1,0 +1,90 @@
+.page {
+  margin: 1rem 7rem;
+  display: flex;
+}
+
+.heading {
+  font-size: 1.6rem;
+  color: #1c3b5e;
+  margin-top: 1rem;
+}
+
+.ticketImage {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+  margin: 2rem 0;
+}
+
+.title {
+  font-size: 1.3rem;
+  color: #1c3b5e;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 2px solid #9cb5d2;
+}
+
+.ticketsContainer {
+  width: fit-content;
+}
+
+.infoP,
+.ticketInfo {
+  display: flex;
+  gap: 4rem;
+}
+
+.ticketInfo {
+  padding-bottom: 1rem;
+}
+
+.checkoutContainer {
+  border: 2px solid #9cb5d2;
+  width: 30%;
+  border-radius: 25px;
+  font-size: 2.5rem;
+  color: #1c3b5e;
+  position: fixed;
+  top: 10rem;
+  right: 15rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.orderInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-bottom: 2px solid #9cb5d2;
+}
+
+.buy {
+  width: 40%;
+  padding: 0.5rem;
+  border-radius: 25px;
+  background-color: #1c3b5e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buy:active {
+  background-color: #5b89be;
+}
+
+.link {
+  all: unset;
+  text-decoration: none;
+  color: #1c3b5e;
+  cursor: pointer;
+}

@@ -32,6 +32,7 @@ export default function EventDetail() {
 
   function handleBuyTickets() {
     addTicketToOrder(
+      data.image,
       data.name,
       data.date,
       data.time,

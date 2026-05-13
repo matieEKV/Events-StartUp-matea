@@ -81,7 +81,10 @@
   margin: 1rem 0;
   cursor: pointer;
 }
-
+.link {
+  all: unset;
+  text-decoration: none;
+}
 .checkout:active {
   background-color: #a03308;
 }
