@@ -45,7 +45,7 @@ export const Cart = () => {
             {tickets.map((ticket) => {
               return (
                 <>
-                  <p className={styles.title}>
+                  <p key={ticket.name} className={styles.title}>
                     <strong>{ticket.ticketTitle}</strong>
                   </p>
                   <p className={styles.infoP}>
