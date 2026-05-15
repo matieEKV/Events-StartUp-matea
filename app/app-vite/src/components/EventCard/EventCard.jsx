@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./EventCard.module.css";
+import { useCardContext } from "../../context/CardContext.jsx";
 
 export const EventCard = ({ event }) => {
   const [isShowing, setIsShowing] = useState(false);
   const [hover, setHover] = useState(false);
+
+  const { addTicketToOrder } = useCardContext();
 
   const ticketStatus =
     event.ticketsAvailable === 0
@@ -26,6 +29,16 @@ export const EventCard = ({ event }) => {
 
   const addToCart = (e) => {
     e.stopPropagation();
+    const ticketNumber = 1;
+    addTicketToOrder(
+      event.image,
+      event.name,
+      event.date,
+      event.time,
+      event.price,
+      ticketNumber,
+      event.price * ticketNumber,
+    );
   };
 
   return (
