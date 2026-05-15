@@ -7,6 +7,26 @@
   all: unset;
 }
 
+.cartButton {
+  background-color: transparent;
+  width: fit-content;
+  color: #1c3b5e;
+  border: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.cartButton:hover {
+  color: #b5481d;
+}
+
+.cartButton:active {
+  color: #1c3b5e;
+}
+
 .eventCard {
   min-height: 12rem;
   margin-top: 2rem;
@@ -27,6 +47,9 @@
   box-shadow: rgba(18, 18, 18, 0.45) 0px 1px 4px 0px;
 }
 
+.eventCard:hover {
+  transform: scale(1.05);
+}
 @keyframes reveal {
   from {
     opacity: 0;

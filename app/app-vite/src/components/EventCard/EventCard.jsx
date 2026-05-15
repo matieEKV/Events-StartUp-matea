@@ -4,6 +4,7 @@ import styles from "./EventCard.module.css";
 
 export const EventCard = ({ event }) => {
   const [isShowing, setIsShowing] = useState(false);
+  const [hover, setHover] = useState(false);
 
   const ticketStatus =
     event.ticketsAvailable === 0
@@ -14,9 +15,25 @@ export const EventCard = ({ event }) => {
   function toggleSection() {
     setIsShowing(!isShowing);
   }
+  //show cart icon on hover, hide on leave
+  const onHover = () => {
+    setHover(true);
+  };
+
+  const onLeave = () => {
+    setHover(false);
+  };
+
+  const addToCart = (e) => {
+    e.stopPropagation();
+  };
 
   return (
-    <div className={styles.eventCard}>
+    <div
+      className={styles.eventCard}
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+    >
       <Link to={`/events/${event.id}`} className={styles.link}>
         <img
           className={styles.eventImage}
@@ -83,6 +100,7 @@ export const EventCard = ({ event }) => {
                 <span>{event.city}</span>
               </div>
             </div>
+
             {/* {isShowing && (
               <>
                 <p className={styles.label}>
@@ -110,6 +128,25 @@ export const EventCard = ({ event }) => {
           </section>
         </section>
       </Link>
+      {hover && (
+        <button className={styles.cartButton} onClick={addToCart}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M 2 6 h 4 l 3 9 h 8 l 3 -9 h -14" />
+            <circle cx="9" cy="18" r="1.5" />
+            <circle cx="17" cy="18" r="1.5" />
+          </svg>
+        </button>
+      )}
       {/* <button className={styles.toggleButton} onClick={toggleSection}>
         {isShowing ? "Show less" : "Show more"}
       </button> */}
