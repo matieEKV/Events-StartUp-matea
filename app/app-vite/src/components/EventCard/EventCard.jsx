@@ -8,7 +8,9 @@ export const EventCard = ({ event }) => {
   const [hover, setHover] = useState(false);
 
   const { addTicketToOrder } = useCardContext();
+  const cardTickets = event.ticketsAvailable;
 
+  const [ticketsLeft, setTicketsLeft] = useState(event.ticketsAvailable);
   const ticketStatus =
     event.ticketsAvailable === 0
       ? "Sold out"
@@ -39,6 +41,7 @@ export const EventCard = ({ event }) => {
       ticketNumber,
       event.price * ticketNumber,
     );
+    setTicketsLeft((prev) => prev - 1);
   };
 
   return (
@@ -162,12 +165,16 @@ export const EventCard = ({ event }) => {
           </section>
         </section>
       </Link>
-      {hover && event.ticketsAvailable > 0 && (
-        <button className={styles.cartButton} onClick={addToCart}>
+      {hover && (
+        <button
+          className={styles.cartButton}
+          onClick={addToCart}
+          disabled={event.ticketsAvailable === 0 || ticketsLeft === 0}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="35"
-            height="35"
+            width="45"
+            height="45"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

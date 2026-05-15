@@ -30,6 +30,11 @@ export default function EventDetail() {
     }
   }
 
+  const ticketStatus =
+    event.ticketsAvailable === 0
+      ? "Sold out"
+      : `${event.ticketsAvailable} tickets left`;
+
   function handleBuyTickets() {
     addTicketToOrder(
       data.image,
@@ -85,11 +90,7 @@ export default function EventDetail() {
         <div className={styles.tickets}>
           <p>
             <span className={styles.legend}>AVAILABLE TICKETS</span>
-            <span className={styles.descInfo}>
-              {data.ticketsAvailable === 0
-                ? "SOLD OUT"
-                : `${data.ticketsAvailable}`}
-            </span>
+            <span className={styles.descInfo}>{ticketStatus}</span>
           </p>
           <div className={styles.counter}>
             <button className={styles.minusButton} onClick={handleDecrement}>
