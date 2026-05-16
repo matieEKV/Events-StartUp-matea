@@ -5,7 +5,7 @@
 
 .heading {
   font-size: 1.6rem;
-  color: #1c3b5e;
+  color: var(--primary-color);
   margin-top: 1rem;
 }
 
@@ -18,7 +18,7 @@
 
 .title {
   font-size: 1.3rem;
-  color: #1c3b5e;
+  color: var(--primary-color);
 }
 
 .infoContainer {
@@ -44,11 +44,10 @@
 }
 
 .checkoutContainer {
-  border: 2px solid #9cb5d2;
+  border: var(--solid-border);
   width: 30%;
   border-radius: 25px;
-  font-size: 2.5rem;
-  color: #1c3b5e;
+  color: var(--primary-color);
   position: fixed;
   top: 10rem;
   right: 15rem;
@@ -56,35 +55,44 @@
   text-align: center;
 }
 
+.summary {
+  border-bottom: var(--dotted-border);
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
 .orderInfo {
   display: flex;
   justify-content: space-between;
+  font-size: 1.2rem;
 }
 
 .order {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  border-bottom: 2px solid #9cb5d2;
+  border-bottom: var(--dotted-border);
+  padding-bottom: 1rem;
 }
 
 .buy {
   width: 40%;
   padding: 0.5rem;
+  margin-top: 1rem;
   border-radius: 25px;
-  background-color: #1c3b5e;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .buy:active {
-  background-color: #5b89be;
+  background-color: var(--active-button);
 }
 
 .link {
   all: unset;
   text-decoration: none;
-  color: #1c3b5e;
+  color: var(--primary-color);
   cursor: pointer;
 }

@@ -7,6 +7,15 @@ body,
   width: 100%;
 }
 
+:root {
+  --primary-color: #1c3b5e;
+  --secondary-color: #b5481d;
+  --dotted-border: 2px dotted #9cb5d2;
+  --solid-border: 2px solid #9cb5d2;
+  --active-button: #5b89be;
+  --shadow: rgba(18, 18, 18, 0.35) 0px 1px 4px 0px;
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 13px;

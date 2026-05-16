@@ -2,17 +2,26 @@
   color: white;
   background-color: transparent;
   border: none;
+  position: relative;
+  cursor: pointer;
 }
 
 .loginIcon:active {
-  color: #b5481d;
+  color: var(--secondary-color);
+}
+
+.loggedIn {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  animation: pop-in 0.5s ease-out;
 }
 
 .loginMenu {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-color: #1c3b5e;
+  background-color: var(--primary-color);
   max-height: 10rem;
   padding: 0.5rem 2rem;
   position: absolute;
@@ -27,11 +36,22 @@
 }
 
 .linkOptions:hover {
-  color: #b66c4f;
+  color: var(--secondary-color);
 }
 
 .linkOptions:active {
-  color: #b5481d;
+  color: var(--secondary-color);
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 768px) {

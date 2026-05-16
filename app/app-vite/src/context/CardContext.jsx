@@ -3,7 +3,10 @@ import { createContext, useContext, useState } from "react";
 export const CardContext = createContext(null);
 
 export const CardContextProvider = ({ children }) => {
-  const [tickets, setTickets] = useState([]);
+  const [tickets, setTickets] = useState(() => {
+    const savedOrders = localStorage.getItem("orders");
+    return savedOrders ? JSON.parse(savedOrders) : [];
+  });
 
   const totalTickets = tickets.reduce(
     (sum, card) => sum + card.numberOfTickets,
@@ -11,7 +14,6 @@ export const CardContextProvider = ({ children }) => {
   );
   const totalPrice = tickets.reduce((sum, card) => sum + card.totalPrice, 0);
 
-  console.log("totalTickets:", totalTickets);
   const addTicketToOrder = (
     ticketImage,
     ticketTitle,
@@ -53,8 +55,8 @@ export const CardContextProvider = ({ children }) => {
     persist(copiedCart);
   };
 
-  const removeTicketFromOrder = (ticketId) => {
-    setTickets(tickets.filter((ticket) => ticket.id !== ticketId));
+  const removeTicketFromOrder = (ticketName) => {
+    setTickets(tickets.filter((ticket) => ticketName !== ticket.ticketTitle));
   };
 
   function persist(tickets) {

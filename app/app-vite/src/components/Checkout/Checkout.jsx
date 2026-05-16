@@ -42,6 +42,7 @@ export const Checkout = () => {
       </div>
       <div className={styles.checkoutContainer}>
         <div className={styles.order}>
+          <p className={styles.summary}>Order Summary</p>
           <p className={styles.orderInfo}>
             <span>Tickets: </span>
             <span>{totalTickets}</span>

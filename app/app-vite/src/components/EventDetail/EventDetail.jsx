@@ -31,9 +31,9 @@ export default function EventDetail() {
   }
 
   const ticketStatus =
-    event.ticketsAvailable === 0
+    data.ticketsAvailable === 0
       ? "Sold out"
-      : `${event.ticketsAvailable} tickets left`;
+      : `${data.ticketsAvailable} tickets left`;
 
   function handleBuyTickets() {
     addTicketToOrder(
