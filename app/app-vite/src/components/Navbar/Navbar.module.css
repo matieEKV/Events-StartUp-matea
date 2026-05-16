@@ -13,6 +13,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  padding-left: 1rem;
   border-bottom: 5px solid #1c3b5e;
   max-height: 10rem;
   background-color: #1c3b5e;

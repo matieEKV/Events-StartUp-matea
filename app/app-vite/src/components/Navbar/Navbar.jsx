@@ -4,6 +4,7 @@ import { SearchBar } from "../SearchBar/SearchBar.jsx";
 import { useSearchParams } from "react-router-dom";
 import LoginIcon from "../LoginIcon/LoginIcon.jsx";
 import { Cart } from "../Cart/Cart.jsx";
+import { Logo } from "../Logo/Logo.jsx";
 
 export const Navbar = ({ onClick, isOnlyAvailable }) => {
   //search bar
@@ -17,9 +18,8 @@ export const Navbar = ({ onClick, isOnlyAvailable }) => {
 
   return (
     <header className={styles.headerContainer}>
-      <div className={styles.navbarLogo}>
-        <img src="/src/shared/evenTeam.png" alt=""></img>
-      </div>
+      <Logo />
+
       <SearchBar query={query} onChange={handleSearchChange} />
       <nav className={styles.navbar}>
         <LoginIcon />
