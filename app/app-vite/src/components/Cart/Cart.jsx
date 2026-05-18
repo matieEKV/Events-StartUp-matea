@@ -154,9 +154,14 @@ export const Cart = () => {
               <span>DKK {totalPrice}</span>
             </p>
             <button className={styles.checkout} disabled={!isAuthenticated}>
-              <Link className={styles.link} to={`checkout`}>
-                Checkout
-              </Link>
+              {" "}
+              {isAuthenticated ? (
+                <Link className={styles.link} to={`checkout`}>
+                  Checkout
+                </Link>
+              ) : (
+                "Checkout"
+              )}
             </button>
             {!isAuthenticated && (
               <div className={styles.noUser}>
