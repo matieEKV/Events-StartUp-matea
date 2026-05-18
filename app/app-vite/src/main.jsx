@@ -9,6 +9,8 @@ import Login from "./components/Login/Login.jsx";
 import Register from "./components/Register/Register.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import "./main.css";
+import { CardContextProvider } from "./context/CardContext.jsx";
+import { Checkout } from "./components/Checkout/Checkout.jsx";
 // Cart model: cart items are stored in localStorage via CartContext (no backend needed).
 // At checkout, the cart is POSTed to POST /api/orders and then cleared.
 // CartContext should follow the same pattern as AuthContext — see that file for reference.
@@ -21,6 +23,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "events", element: <EventList /> },
       { path: "events/:id", element: <EventDetail /> },
+      { path: "checkout", element: <Checkout /> },
     ],
   },
   { path: "/login", element: <Login /> },
@@ -29,8 +32,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <CardContextProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </CardContextProvider>
   </React.StrictMode>,
 );

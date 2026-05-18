@@ -1,0 +1,152 @@
+.cartIcon {
+  background-color: transparent;
+  margin-right: 3rem;
+  border: none;
+  position: relative;
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.cartIcon:active {
+  color: var(--secondary-color);
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--primary-color);
+  box-shadow: var(--shadow-35);
+  max-height: fit-content;
+  padding: 0.5rem 2rem;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  border-radius: 2px;
+  color: white;
+}
+
+.title {
+  font-size: larger;
+}
+
+.dateTime,
+.ticketsPrice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.infoContainer {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 1.5rem;
+  align-items: center;
+  border-bottom: 1px solid grey;
+}
+
+.infoP {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.ticketInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
+.bubble {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.3rem;
+  border-radius: 50%;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: absolute;
+  top: 2px;
+  right: 40px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.emptyCart {
+  color: rgb(227, 225, 225);
+}
+
+.checkout {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-35);
+  border-radius: 20px;
+  padding: 0.4rem;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.checkout:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.link {
+  all: unset;
+  text-decoration: none;
+}
+
+.linkUser {
+  color: rgb(211, 205, 205);
+}
+
+.checkout:active {
+  background-color: var(--secondary-color);
+}
+
+.noUser {
+  text-align: center;
+  border-top: 1px solid grey;
+  padding-top: 0.2rem;
+}
+
+.deleteCards {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.deleteCards:active {
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .loginIcon {
+    height: 4rem;
+    width: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginIcon {
+    height: 3rem;
+    width: 1rem;
+  }
+}

@@ -13,16 +13,14 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  padding-left: 1rem;
   border-bottom: 5px solid #1c3b5e;
-  max-height: 10rem;
+  max-height: 5rem;
   background-color: #1c3b5e;
   z-index: 10;
 }
 
-.navbarLogo img {
-  height: 4rem;
-}
-
 .navbar {
   display: flex;
+  gap: 1.5rem;
 }

@@ -1,0 +1,39 @@
+.hackMark {
+  opacity: 0;
+  height: 3rem;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+.hackMark svg {
+  height: 100%;
+  width: 100%;
+}
+
+.hackMark.active {
+  opacity: 1;
+}
+
+.hackMark .animationLayer {
+  stroke: white;
+}
+
+.hackMark.active .animationLayer {
+  opacity: 1;
+  animation: dash 1.9s ease-in-out forwards;
+}
+
+.hackMark.active .layer2.animationLayer {
+  animation-delay: 1.8s;
+}
+
+.hackMark .layer2.animationLayer {
+  animation-delay: 0s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

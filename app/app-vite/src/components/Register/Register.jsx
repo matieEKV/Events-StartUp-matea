@@ -15,12 +15,11 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const { user, token, register } = useAuth();
+  const { user, token, register, isAuthenticated } = useAuth();
 
   //validation for password length - inspiration taken from https://coreui.io/answers/how-to-validate-email-in-react-form/
   const isValidPassword = password.length === 0 || password.length >= 8;
   const [passwordTouched, setPasswordTouched] = useState(false);
-  const isAuthenticated = !!user && !!token;
 
   //postpone navigating after successful registration to show the success message
   useEffect(() => {

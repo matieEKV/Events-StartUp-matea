@@ -22,7 +22,7 @@ export default function EventList({ events }) {
     useFilterEvents(data);
   //pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const [eventsPerPage, setEventsPerPage] = useState(5);
+  const [eventsPerPage, setEventsPerPage] = useState(4);
 
   const lastEventIndex = currentPage * eventsPerPage;
   const firstEventIndex = lastEventIndex - eventsPerPage;

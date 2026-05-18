@@ -28,6 +28,9 @@ export function AuthProvider({ children }) {
     persist(accessToken, user);
   }
 
+  //adding a boolean to check if the user is logged in
+  const isAuthenticated = !!user && !!token;
+
   async function register(email, password) {
     // TODO: POST to api("/register") with { email, password }
     // TODO: if the response is not ok, throw an error
@@ -64,7 +67,9 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, token, login, register, logout }}>
+    <AuthContext.Provider
+      value={{ user, token, login, register, logout, isAuthenticated }}
+    >
       {children}
     </AuthContext.Provider>
   );

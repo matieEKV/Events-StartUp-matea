@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 3rem;
 }
 
 .imageBlock {
@@ -66,4 +67,116 @@
   color: white;
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+.tickets {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.counter {
+  box-shadow: rgba(18, 18, 18, 0.15) 0px 1px 4px 0px;
+
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding: calc(4px);
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: 32px;
+  /* another cool thing learned from Limbo workshop */
+  height: clamp(2.5rem, 3.5vw, 3.5rem);
+  width: clamp(8rem, 15vw, 12rem);
+  flex-shrink: 1;
+}
+
+.minusButton,
+.plusButton {
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.minusButton {
+  color: #305177;
+  background-color: transparent;
+  font-size: 2rem;
+}
+
+.plusButton {
+  background-color: #305177;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.minusButton:active {
+  color: #5184bf;
+}
+
+.plusButton:active {
+  background-color: #5184bf;
+}
+
+.buyTickets {
+  border-radius: 32px;
+  background-color: #305177;
+  border: 1px solid rgb(191, 191, 191);
+  box-shadow: rgba(18, 18, 18, 0.15) 0px 1px 4px 0px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  height: clamp(2.5rem, 3.5vw, 3.5rem);
+  width: clamp(10rem, 20vw, 15rem);
+}
+
+.buyTickets:active {
+  background-color: #5184bf;
+}
+
+.count {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+
+  .description {
+    max-width: 90%;
+    margin: 1.5rem;
+  }
+
+  .imageBlock {
+    min-height: 15rem;
+  }
+
+  .tickets {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .buyTickets {
+    padding: 0.5rem 0;
+  }
+  .tickets > p {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 11px;
+  }
+
+  .shortInfo {
+    margin: 2rem 0 0 1rem;
+  }
 }
