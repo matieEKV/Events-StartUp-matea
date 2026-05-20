@@ -63,12 +63,18 @@ export const CardContextProvider = ({ children }) => {
     localStorage.setItem("orders", JSON.stringify(tickets));
   }
 
+  function clearCart() {
+    localStorage.clear();
+    setTickets([]);
+  }
+
   return (
     <CardContext.Provider
       value={{
         tickets,
         addTicketToOrder,
         removeTicketFromOrder,
+        clearCart,
         totalTickets,
         totalPrice,
       }}
