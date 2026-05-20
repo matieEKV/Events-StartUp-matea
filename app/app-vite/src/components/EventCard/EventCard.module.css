@@ -19,6 +19,14 @@ i {
   right: 10%;
   cursor: pointer;
   z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.eventCard:hover .cartButton {
+  opacity: 1;
+  visibility: visible;
 }
 
 .cartButton:hover {

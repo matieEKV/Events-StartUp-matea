@@ -5,7 +5,6 @@ import { useCardContext } from "../../context/CardContext.jsx";
 
 export const EventCard = ({ event }) => {
   const [isShowing, setIsShowing] = useState(false);
-  const [hover, setHover] = useState(false);
 
   const { addTicketToOrder } = useCardContext();
   const cardTickets = event.ticketsAvailable;
@@ -20,14 +19,6 @@ export const EventCard = ({ event }) => {
   function toggleSection() {
     setIsShowing(!isShowing);
   }
-  //show cart icon on hover, hide on leave
-  const onHover = () => {
-    setHover(true);
-  };
-
-  const onLeave = () => {
-    setHover(false);
-  };
 
   const addToCart = (e) => {
     e.stopPropagation();
@@ -45,11 +36,7 @@ export const EventCard = ({ event }) => {
   };
 
   return (
-    <div
-      className={styles.eventCard}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
-    >
+    <div className={styles.eventCard}>
       <Link to={`/events/${event.id}`} className={styles.link}>
         <img
           className={styles.eventImage}
@@ -83,60 +70,30 @@ export const EventCard = ({ event }) => {
               <i className="fa-solid fa-ticket"></i>
               <span>{ticketStatus}</span>
             </div>
-
-            {/* {isShowing && (
-              <>
-                <p className={styles.label}>
-                  <strong>Description</strong>
-                </p>
-                <p className={styles.eventDescription}>{description}</p>
-                <p className={styles.label}>
-                  <strong>Price</strong>
-                </p>
-                <p className={styles.price}>{priceStatus}</p>
-                <p className={styles.label}>
-                  <strong>Tickets Available</strong>
-                </p>
-                <p className={styles.tickets}>{ticketStatus}</p>
-                <p className={styles.label}>
-                  <strong>Total Tickets</strong>
-                </p>
-                <p className={styles.tickets}>{event.totalTickets}</p>
-                <p className={styles.label}>
-                  <strong>Category</strong>
-                </p>
-                <p className={styles.category}>{event.category}</p>
-              </>
-            )} */}
           </section>
         </section>
       </Link>
-      {hover && (
-        <button
-          className={styles.cartButton}
-          onClick={addToCart}
-          disabled={event.ticketsAvailable === 0 || ticketsLeft === 0}
+      <button
+        className={styles.cartButton}
+        onClick={addToCart}
+        disabled={event.ticketsAvailable === 0 || ticketsLeft === 0}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="45"
+          height="45"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="45"
-            height="45"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M 2 6 h 4 l 3 9 h 8 l 3 -9 h -14" />
-            <circle cx="9" cy="18" r="1.5" />
-            <circle cx="17" cy="18" r="1.5" />
-          </svg>
-        </button>
-      )}
-      {/* <button className={styles.toggleButton} onClick={toggleSection}>
-        {isShowing ? "Show less" : "Show more"}
-      </button> */}
+          <path d="M 2 6 h 4 l 3 9 h 8 l 3 -9 h -14" />
+          <circle cx="9" cy="18" r="1.5" />
+          <circle cx="17" cy="18" r="1.5" />
+        </svg>
+      </button>
     </div>
   );
 };
