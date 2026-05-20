@@ -1,46 +1,34 @@
-.page {
-  margin: 1rem 7rem;
-  display: flex;
+.infoContainer {
+  border-bottom: 2px solid #9cb5d2;
+}
+
+.link {
+  all: unset;
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 .heading {
   font-size: 1.6rem;
   color: var(--primary-color);
   margin-top: 1rem;
+  text-align: center;
 }
 
-.ticketImage {
-  height: 15rem;
-  width: 100%;
-  object-fit: cover;
-  margin: 2rem 0;
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
+.page {
+  margin: 1rem 7rem;
+  display: flex;
+}
 .title {
   font-size: 1.3rem;
   color: var(--primary-color);
-}
-
-.infoContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  border-bottom: 2px solid #9cb5d2;
-}
-
-.ticketsContainer {
-  width: fit-content;
-}
-
-.infoP,
-.ticketInfo {
-  display: flex;
-  gap: 4rem;
-}
-
-.ticketInfo {
-  padding-bottom: 1rem;
 }
 
 .checkoutContainer {
@@ -88,11 +76,4 @@
 
 .buy:active {
   background-color: var(--active-button);
-}
-
-.link {
-  all: unset;
-  text-decoration: none;
-  color: var(--primary-color);
-  cursor: pointer;
 }

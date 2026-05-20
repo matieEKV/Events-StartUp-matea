@@ -8,6 +8,11 @@
   cursor: pointer;
 }
 
+.title {
+  font-size: 1.3rem;
+  color: white;
+}
+
 .cartIcon:active {
   color: var(--secondary-color);
 }
@@ -25,46 +30,6 @@
   top: 100%;
   border-radius: 2px;
   color: white;
-}
-
-.title {
-  font-size: larger;
-}
-
-.dateTime,
-.ticketsPrice {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-right: 1rem;
-}
-
-.infoContainer {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  gap: 1.5rem;
-  align-items: center;
-  border-bottom: 1px solid grey;
-}
-
-.infoP {
-  display: flex;
-  gap: 2rem;
-  padding-top: 1rem;
-}
-
-.ticketInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 0;
-}
-
-.total {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.3rem;
 }
 
 .bubble {
@@ -124,6 +89,12 @@
   text-align: center;
   border-top: 1px solid grey;
   padding-top: 0.2rem;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
 }
 
 .deleteCards {
