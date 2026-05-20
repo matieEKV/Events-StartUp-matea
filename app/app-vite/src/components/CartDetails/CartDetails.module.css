@@ -17,10 +17,9 @@
 }
 
 .ticketsContainer {
-  width: fit-content;
+  width: 100%; /* Force it to take up the full available width */
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -28,6 +27,7 @@
 .ticketInfo {
   display: flex;
   gap: 4rem;
+  margin-left: 1rem;
 }
 
 .ticketInfo {
@@ -42,6 +42,7 @@
 }
 
 .description {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
