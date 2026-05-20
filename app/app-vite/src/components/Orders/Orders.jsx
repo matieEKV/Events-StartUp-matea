@@ -10,7 +10,8 @@ export const Orders = () => {
     headers: { Authorization: "`Bearer ${token}`" },
   });
   //errors
-  if (loading) return <p className="errorStatus">Loading previous orders...</p>;
+  if (loading)
+    return <p className="loadingStatus">Loading previous orders...</p>;
 
   if (error)
     return <p className="errorStatus">Something went wrong: {error}</p>;

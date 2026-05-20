@@ -29,10 +29,10 @@ export default function EventList({ events }) {
   const currentEvents = filteredEvents.slice(firstEventIndex, lastEventIndex);
 
   //errors
-  if (loading) return <p className="errorStatus">Searching for events...</p>;
+  if (loading) return <p className="loadingStatus">Searching for events...</p>;
 
   if (error)
-    return <p className={styles.status}>Something went wrong: {error}</p>;
+    return <p className="errorStatus">Something went wrong: {error}</p>;
 
   if (data && data.length === 0) {
     return (
