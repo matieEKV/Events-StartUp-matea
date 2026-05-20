@@ -4,7 +4,7 @@ import { useCardContext } from "../context/CardContext.jsx";
 import api from "../api";
 
 export const useCheckout = () => {
-  const { token } = useAuth();
+  const { user, token } = useAuth();
   const { tickets, clearCart } = useCardContext();
   const [receipt, setReceipt] = useState(() => {
     const stored = localStorage.getItem("orders");
@@ -24,7 +24,7 @@ export const useCheckout = () => {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ tickets }),
+        body: JSON.stringify({ tickets, user_id: user.id }),
       });
 
       if (!response.ok) {
