@@ -46,7 +46,7 @@ export const Checkout = () => {
             </p>
             <div className={styles.buttonContainer}>
               <button className={styles.checkedOutButton}>
-                <Link className={styles.links} to="orders">
+                <Link className={styles.links} to="/orders">
                   To My Orders
                 </Link>
               </button>
