@@ -6,7 +6,9 @@ body,
   height: 100%;
   width: 100%;
 }
-
+.fa-trash-can {
+  font-size: 1.3rem;
+}
 :root {
   --primary-color: #1c3b5e;
   --secondary-color: #b5481d;

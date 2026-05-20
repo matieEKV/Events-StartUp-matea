@@ -6,7 +6,9 @@
   text-decoration: none;
   all: unset;
 }
-
+i {
+  margin: 0 0.5rem;
+}
 .cartButton {
   background-color: transparent;
   width: fit-content;
