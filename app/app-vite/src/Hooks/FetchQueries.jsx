@@ -13,7 +13,7 @@ export const useFetchData = (url, options = {}) => {
     try {
       const response = await fetch(api(url), options);
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error("Something went wrong", error);
       }
       const data = await response.json();
       setData(data);
