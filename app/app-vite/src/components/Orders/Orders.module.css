@@ -28,3 +28,8 @@
   top: 10%;
   left: 5%;
 }
+
+.emptyOrder {
+  font-size: 1.2rem;
+  color: grey;
+}

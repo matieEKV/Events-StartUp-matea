@@ -6,6 +6,14 @@ import { Link } from "react-router-dom";
 
 export const Orders = () => {
   const { user, token, isAuthenticated } = useAuth();
+
+  if (!(isAuthenticated || user)) {
+    return (
+      <p className="errorStatus">
+        You must be logged in to see previous orders. Please login now.
+      </p>
+    );
+  }
   const { data, loading, error } = useFetchData(`orders?user_id=${user.id}`, {
     headers: { Authorization: "`Bearer ${token}`" },
   });
@@ -23,25 +31,22 @@ export const Orders = () => {
           ← Back to Events
         </Link>
         <p className={styles.heading}>YOUR ORDER HISTORY</p>
-
-        {isAuthenticated ? (
-          data.map((order) => {
-            return order.tickets.map((ticket) => (
-              <div className={styles.ticket}>
-                <CartDetails
-                  key={ticket.ticketTitle}
-                  ticket={ticket}
-                  imageSlot={ticket.ticketImage}
-                />
-              </div>
-            ));
-          })
-        ) : (
-          <p>
-            You must be logged in to see previous orders. Please login or
-            register now.
+        {data.length === 0 && (
+          <p className={styles.emptyOrder}>
+            <em>No previous orders. Go to Events Page and order tickets!</em>
           </p>
         )}
+        {data.map((order) => {
+          return order.tickets.map((ticket) => (
+            <div className={styles.ticket}>
+              <CartDetails
+                key={ticket.ticketTitle}
+                ticket={ticket}
+                imageSlot={ticket.ticketImage}
+              />
+            </div>
+          ));
+        })}
       </div>
     </>
   );
