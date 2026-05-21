@@ -1,5 +1,9 @@
 .pageButtons {
-  margin: 0.5rem;
+  margin: 1.5rem 0.3rem;
+  border-radius: 5px;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 .pageButtons:hover {
@@ -9,4 +13,10 @@
 .pageButtons:active {
   background-color: #b5481d;
   border: #cf9078;
+}
+
+@media (max-width: 480px) {
+  .pageButtons {
+    margin: 3.5rem 0.3rem;
+  }
 }

@@ -1,9 +1,9 @@
 .cartIcon {
   background-color: transparent;
-  margin-right: 3rem;
   border: none;
   position: relative;
   color: white;
+  margin-right: 3rem;
   z-index: 1;
   cursor: pointer;
 }
@@ -46,8 +46,8 @@
   align-items: center;
   font-size: 1.1rem;
   position: absolute;
-  top: 2px;
-  right: 40px;
+  top: 1px;
+  right: 60px;
   z-index: 2;
   pointer-events: none;
 }
@@ -115,11 +115,25 @@
     height: 4rem;
     width: 2rem;
   }
+  .bubble {
+    top: 2px;
+    right: 50px;
+  }
 }
 
 @media (max-width: 480px) {
   .loginIcon {
     height: 3rem;
     width: 1rem;
+  }
+
+  .cartIcon {
+    padding-top: 1rem;
+    margin-right: 0.1rem;
+  }
+
+  .bubble {
+    top: 3px;
+    right: 15px;
   }
 }

@@ -51,6 +51,7 @@ export const CardContextProvider = ({ children }) => {
       };
       setTickets(copiedCart);
     }
+
     //save in localStorage
     persist(copiedCart);
   };
@@ -79,8 +80,7 @@ export const CardContextProvider = ({ children }) => {
         totalPrice,
       }}
     >
-      {" "}
-      {children}{" "}
+      {children}
     </CardContext.Provider>
   );
 };

@@ -116,3 +116,18 @@
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 1080px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .checkoutContainer {
+    position: static;
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
