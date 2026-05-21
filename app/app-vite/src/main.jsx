@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <HomePage /> },
+      { index: true, element: <EventList /> },
       { path: "events", element: <EventList /> },
       { path: "events/:id", element: <EventDetail /> },
       { path: "checkout", element: <Checkout /> },
