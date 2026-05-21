@@ -12,7 +12,7 @@
 
 .pageButtons:active {
   background-color: #b5481d;
-  border: #cf9078;
+  border: 1px solid #cf9078;
 }
 
 @media (max-width: 480px) {
