@@ -29,6 +29,6 @@ body {
 
 @media (max-width: 480px) {
   .navbar {
-    gap: 2.5rem;
+    gap: 3rem;
   }
 }

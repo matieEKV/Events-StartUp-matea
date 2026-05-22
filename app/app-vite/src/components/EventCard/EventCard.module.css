@@ -6,9 +6,11 @@
   text-decoration: none;
   all: unset;
 }
+
 i {
   margin: 0 0.5rem;
 }
+
 .cartButton {
   background-color: transparent;
   width: fit-content;
@@ -66,6 +68,7 @@ i {
 .eventCard:hover {
   transform: scale(1.05);
 }
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -96,6 +99,7 @@ i {
 .eventTitle {
   font-size: 1.1rem;
 }
+
 .dateTime,
 .eventLocation,
 .ticketStatus {
@@ -113,6 +117,7 @@ i {
 .eventLocation {
   gap: 1rem;
 }
+
 .toggleButton {
   margin-top: 0.3rem;
   border-radius: 1rem;
@@ -124,6 +129,7 @@ i {
   display: flex;
   flex-direction: column;
 }
+
 .dateTime {
   gap: 2rem;
 }
@@ -134,4 +140,10 @@ i {
 
 .toggleButton:active {
   background-color: rgb(37, 61, 61);
+}
+
+@media (max-width: 480px) {
+  .cartButton {
+    visibility: visible;
+  }
 }
