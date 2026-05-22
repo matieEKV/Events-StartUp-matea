@@ -5,7 +5,7 @@ body,
   padding: 0;
   height: 100%;
   width: 100%;
-  font-size: 95%; /* accidentally styled my app while browser was scaled down to 90%, so this was an easy fix */
+  font-size: 95%; /* accidentally styled my app while browser was scaled down to 95%, so this was an easy fix */
 }
 
 .fa-trash-can {

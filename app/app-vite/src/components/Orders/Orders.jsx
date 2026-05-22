@@ -21,8 +21,7 @@ export const Orders = () => {
   if (loading)
     return <p className="loadingStatus">Loading previous orders...</p>;
 
-  if (error)
-    return <p className="errorStatus">Something went wrong: {error}</p>;
+  if (error) return <p className="errorStatus">{error}</p>;
   console.log(data);
   return (
     <>

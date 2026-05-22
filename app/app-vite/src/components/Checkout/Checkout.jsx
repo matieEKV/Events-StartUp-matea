@@ -8,12 +8,7 @@ export const Checkout = () => {
   const { tickets, totalTickets, totalPrice } = useCardContext();
   const { checkout, checkedOut, receipt, loading, error } = useCheckout();
 
-  if (error)
-    return (
-      <p className="errorStatus">
-        Could not complete checkout at the moment: {error}
-      </p>
-    );
+  if (error) return <p className="errorStatus">{error}</p>;
 
   return (
     <div className={styles.page}>
