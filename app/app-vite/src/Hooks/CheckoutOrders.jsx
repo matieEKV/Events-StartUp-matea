@@ -24,7 +24,7 @@ export const useCheckout = () => {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ tickets, user_id: user.id }),
+        body: JSON.stringify({ tickets, userId: user.id }),
       });
 
       if (!response.ok) {
