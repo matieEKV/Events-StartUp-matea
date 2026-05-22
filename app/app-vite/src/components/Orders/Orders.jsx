@@ -15,7 +15,7 @@ export const Orders = () => {
     );
   }
   const { data, loading, error } = useFetchData(`orders?user_id=${user.id}`, {
-    headers: { Authorization: "`Bearer ${token}`" },
+    headers: { Authorization: `Bearer ${token}` },
   });
   //errors
   if (loading)
