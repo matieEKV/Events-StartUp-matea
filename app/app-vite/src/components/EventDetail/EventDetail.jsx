@@ -88,7 +88,7 @@ export default function EventDetail() {
             <span className={styles.legend}>AVAILABLE TICKETS</span>
             <span className={styles.descInfo}>{ticketStatus}</span>
           </p>
-          {ticketNumber != 0 && (
+          {data.ticketsAvailable > 0 && (
             <div className={styles.counter}>
               <button className={styles.minusButton} onClick={handleDecrement}>
                 <svg
