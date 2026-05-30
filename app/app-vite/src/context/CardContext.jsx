@@ -57,7 +57,11 @@ export const CardContextProvider = ({ children }) => {
   };
 
   const removeTicketFromOrder = (ticketName) => {
-    setTickets(tickets.filter((ticket) => ticketName !== ticket.ticketTitle));
+    const updatedTickets = tickets.filter(
+      (ticket) => ticketName !== ticket.ticketTitle,
+    );
+    setTickets(updatedTickets);
+    persist(updatedTickets);
   };
 
   function persist(tickets) {
@@ -65,7 +69,7 @@ export const CardContextProvider = ({ children }) => {
   }
 
   function clearCart() {
-    localStorage.clear();
+    localStorage.clear("orders");
     setTickets([]);
   }
 
