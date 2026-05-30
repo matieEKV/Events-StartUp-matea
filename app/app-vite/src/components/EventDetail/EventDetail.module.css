@@ -184,4 +184,12 @@
   .shortInfo {
     margin: 2rem 0 0 1rem;
   }
+
+  .imageBlock {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blackBoxL {
+    display: none;
+  }
 }
