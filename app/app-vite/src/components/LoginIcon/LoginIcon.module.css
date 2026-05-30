@@ -12,7 +12,7 @@
 
 .loggedIn {
   position: absolute;
-  bottom: -2px;
+  bottom: -5px;
   right: -2px;
   animation: pop-in 0.5s ease-out;
 }
@@ -59,11 +59,25 @@
     height: 4rem;
     width: 2rem;
   }
+
+  .loggedIn {
+    bottom: -5px;
+    right: -23px;
+  }
 }
 
 @media (max-width: 480px) {
   .loginIcon {
     height: 3rem;
     width: 1rem;
+  }
+
+  .loggedIn {
+    bottom: -10px;
+    right: -35px;
+  }
+
+  .loginMenu {
+    right: 50px;
   }
 }

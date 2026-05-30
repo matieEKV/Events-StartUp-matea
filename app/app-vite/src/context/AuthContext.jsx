@@ -29,7 +29,7 @@ export function AuthProvider({ children }) {
   }
 
   //adding a boolean to check if the user is logged in
-  const isAuthenticated = !!user && !!token;
+  const isAuthenticated = !!(user && token);
 
   async function register(email, password) {
     // TODO: POST to api("/register") with { email, password }

@@ -1,11 +1,16 @@
 .cartIcon {
   background-color: transparent;
-  margin-right: 3rem;
   border: none;
   position: relative;
   color: white;
+  margin-right: 3rem;
   z-index: 1;
   cursor: pointer;
+}
+
+.title {
+  font-size: 1.3rem;
+  color: white;
 }
 
 .cartIcon:active {
@@ -25,46 +30,8 @@
   top: 100%;
   border-radius: 2px;
   color: white;
-}
-
-.title {
-  font-size: larger;
-}
-
-.dateTime,
-.ticketsPrice {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-right: 1rem;
-}
-
-.infoContainer {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  gap: 1.5rem;
-  align-items: center;
-  border-bottom: 1px solid grey;
-}
-
-.infoP {
-  display: flex;
-  gap: 2rem;
-  padding-top: 1rem;
-}
-
-.ticketInfo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 0;
-}
-
-.total {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.3rem;
+  max-height: 30rem;
+  overflow-y: scroll;
 }
 
 .bubble {
@@ -79,8 +46,8 @@
   align-items: center;
   font-size: 1.1rem;
   position: absolute;
-  top: 2px;
-  right: 40px;
+  top: 1px;
+  right: 60px;
   z-index: 2;
   pointer-events: none;
 }
@@ -126,6 +93,12 @@
   padding-top: 0.2rem;
 }
 
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+
 .deleteCards {
   background-color: transparent;
   border: none;
@@ -142,11 +115,25 @@
     height: 4rem;
     width: 2rem;
   }
+  .bubble {
+    top: 2px;
+    right: 50px;
+  }
 }
 
 @media (max-width: 480px) {
   .loginIcon {
     height: 3rem;
     width: 1rem;
+  }
+
+  .cartIcon {
+    padding-top: 1rem;
+    margin-right: 0.1rem;
+  }
+
+  .bubble {
+    top: 3px;
+    right: 15px;
   }
 }

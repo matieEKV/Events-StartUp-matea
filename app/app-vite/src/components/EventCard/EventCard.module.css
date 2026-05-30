@@ -7,6 +7,10 @@
   all: unset;
 }
 
+i {
+  margin: 0 0.5rem;
+}
+
 .cartButton {
   background-color: transparent;
   width: fit-content;
@@ -17,6 +21,14 @@
   right: 10%;
   cursor: pointer;
   z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.eventCard:hover .cartButton {
+  opacity: 1;
+  visibility: visible;
 }
 
 .cartButton:hover {
@@ -56,6 +68,7 @@
 .eventCard:hover {
   transform: scale(1.05);
 }
+
 @keyframes reveal {
   from {
     opacity: 0;
@@ -86,6 +99,7 @@
 .eventTitle {
   font-size: 1.1rem;
 }
+
 .dateTime,
 .eventLocation,
 .ticketStatus {
@@ -103,6 +117,7 @@
 .eventLocation {
   gap: 1rem;
 }
+
 .toggleButton {
   margin-top: 0.3rem;
   border-radius: 1rem;
@@ -114,6 +129,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .dateTime {
   gap: 2rem;
 }
@@ -124,4 +140,10 @@
 
 .toggleButton:active {
   background-color: rgb(37, 61, 61);
+}
+
+@media (max-width: 480px) {
+  .cartButton {
+    visibility: visible;
+  }
 }

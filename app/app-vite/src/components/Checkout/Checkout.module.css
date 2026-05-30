@@ -1,51 +1,41 @@
-.page {
-  margin: 1rem 7rem;
-  display: flex;
+.infoContainer {
+  border-bottom: 2px solid #9cb5d2;
+}
+
+.link {
+  all: unset;
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
 }
 
 .heading {
   font-size: 1.6rem;
   color: var(--primary-color);
   margin-top: 1rem;
+  text-align: center;
 }
 
-.ticketImage {
-  height: 15rem;
-  width: 100%;
-  object-fit: cover;
-  margin: 2rem 0;
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.title {
+.page {
+  margin: 1rem 7rem;
+  display: flex;
+}
+
+.title,
+.success {
   font-size: 1.3rem;
   color: var(--primary-color);
 }
 
-.infoContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  border-bottom: 2px solid #9cb5d2;
-}
-
-.ticketsContainer {
-  width: fit-content;
-}
-
-.infoP,
-.ticketInfo {
-  display: flex;
-  gap: 4rem;
-}
-
-.ticketInfo {
-  padding-bottom: 1rem;
-}
-
 .checkoutContainer {
   border: var(--solid-border);
-  width: 30%;
+  width: 20%;
   border-radius: 25px;
   color: var(--primary-color);
   position: fixed;
@@ -75,8 +65,8 @@
   padding-bottom: 1rem;
 }
 
-.buy {
-  width: 40%;
+.buy,
+.checkedOutButton {
   padding: 0.5rem;
   margin-top: 1rem;
   border-radius: 25px;
@@ -85,14 +75,59 @@
   border: none;
   cursor: pointer;
 }
+.buy {
+  width: 80%;
+}
 
-.buy:active {
+.buy:active,
+.checkedOutButton:active {
   background-color: var(--active-button);
 }
 
-.link {
+.success {
+  margin-top: 1rem;
+}
+
+.successContainer {
+  border: var(--solid-border);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--primary-color);
+}
+
+.checkedOutButton {
+  width: 10rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}
+.links {
   all: unset;
   text-decoration: none;
-  color: var(--primary-color);
+  color: white;
   cursor: pointer;
+}
+
+@media (max-width: 1080px) {
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .checkoutContainer {
+    position: static;
+    width: 100%;
+    margin-top: 2rem;
+  }
 }

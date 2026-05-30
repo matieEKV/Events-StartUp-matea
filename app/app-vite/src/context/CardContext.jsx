@@ -51,16 +51,26 @@ export const CardContextProvider = ({ children }) => {
       };
       setTickets(copiedCart);
     }
+
     //save in localStorage
     persist(copiedCart);
   };
 
   const removeTicketFromOrder = (ticketName) => {
-    setTickets(tickets.filter((ticket) => ticketName !== ticket.ticketTitle));
+    const updatedTickets = tickets.filter(
+      (ticket) => ticketName !== ticket.ticketTitle,
+    );
+    setTickets(updatedTickets);
+    persist(updatedTickets);
   };
 
   function persist(tickets) {
     localStorage.setItem("orders", JSON.stringify(tickets));
+  }
+
+  function clearCart() {
+    localStorage.clear("orders");
+    setTickets([]);
   }
 
   return (
@@ -69,12 +79,12 @@ export const CardContextProvider = ({ children }) => {
         tickets,
         addTicketToOrder,
         removeTicketFromOrder,
+        clearCart,
         totalTickets,
         totalPrice,
       }}
     >
-      {" "}
-      {children}{" "}
+      {children}
     </CardContext.Provider>
   );
 };

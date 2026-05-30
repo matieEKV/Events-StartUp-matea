@@ -137,6 +137,11 @@
 .buyTickets:active {
   background-color: #5184bf;
 }
+.buyTickets:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  filter: grayscale(1);
+}
 
 .count {
   font-size: 1.3rem;
@@ -178,5 +183,13 @@
 
   .shortInfo {
     margin: 2rem 0 0 1rem;
+  }
+
+  .imageBlock {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blackBoxL {
+    display: none;
   }
 }

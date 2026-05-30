@@ -64,11 +64,7 @@ export default function EventDetail() {
             <p className={styles.info}>{data.date}</p>
           </div>
         </div>
-        <img
-          // className={styles.eventImage}
-          src={data.image}
-          alt={data.name}
-        ></img>
+        <img src={data.image} alt={data.name}></img>
         <div className={styles.blackBoxL}></div>
       </div>
 
@@ -92,38 +88,44 @@ export default function EventDetail() {
             <span className={styles.legend}>AVAILABLE TICKETS</span>
             <span className={styles.descInfo}>{ticketStatus}</span>
           </p>
-          <div className={styles.counter}>
-            <button className={styles.minusButton} onClick={handleDecrement}>
-              <svg
-                viewBox="0 0 24 24"
-                width="95%"
-                height="95%"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-            <p className={styles.count}>{ticketNumber}</p>
-            <button className={styles.plusButton} onClick={handleIncrement}>
-              <svg
-                viewBox="0 0 24 24"
-                width="95%"
-                height="95%"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-              >
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-              </svg>
-            </button>
-          </div>
-          <button className={styles.buyTickets} onClick={handleBuyTickets}>
-            Buy Tickets
+          {data.ticketsAvailable > 0 && (
+            <div className={styles.counter}>
+              <button className={styles.minusButton} onClick={handleDecrement}>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="95%"
+                  height="95%"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                >
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+              <p className={styles.count}>{ticketNumber}</p>
+              <button className={styles.plusButton} onClick={handleIncrement}>
+                <svg
+                  viewBox="0 0 24 24"
+                  width="95%"
+                  height="95%"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+              </button>
+            </div>
+          )}
+          <button
+            className={styles.buyTickets}
+            onClick={handleBuyTickets}
+            disabled={data.ticketsAvailable === 0}
+          >
+            {data.ticketsAvailable === 0 ? "SOLD OUT" : "Buy Tickets"}
           </button>
         </div>
       </div>
